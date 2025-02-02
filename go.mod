@@ -1,4 +1,4 @@
-module MUSTAFA-A-KHAN/AI-word-explainer
+module github.com/MUSTAFA-A-KHAN/AI-word-explainer
 
 go 1.22.6
 
