@@ -2,6 +2,8 @@ module github.com/MUSTAFA-A-KHAN/AI-word-explainer
 
 go 1.22.6
 
+require gorgonia.org/tensor v0.9.24
+
 require (
 	github.com/apache/arrow/go/arrow v0.0.0-20211112161151-bc219186db40 // indirect
 	github.com/chewxy/hm v1.0.0 // indirect
@@ -15,7 +17,6 @@ require (
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da // indirect
 	gonum.org/v1/gonum v0.15.1 // indirect
 	google.golang.org/protobuf v1.36.4 // indirect
-	gorgonia.org/tensor v0.9.24 // indirect
 	gorgonia.org/vecf32 v0.9.0 // indirect
 	gorgonia.org/vecf64 v0.9.0 // indirect
 )
