@@ -3,23 +3,19 @@ package main
 import (
 	"fmt"
 
-	t "gorgonia.org/tensor"
+	"gonum.org/v1/gonum/stat"
 )
 
 func main() {
+	//A chi-square table is a reference table that lists critical values for chi-square hypothesis tests.
+	//Most of the time these will be dynamic
+	observed := []float64{20, 18}
+	expected := []float64{20, 13}
 
-	rawWeights := []float32{
-		0.2, 0.8, -0.5, 1.0,
-		0.5, -0.91, 0.26, -0.5,
-		-0.26, -0.27, 0.17, 0.87,
-	}
+	// 	ChiSquare computes the chi-square distance between the observed frequencies 'obs' and expected frequencies 'exp' given by:
 
-	inputs := t.New(t.WithBacking([]float32{1, 2, 3, 2.5}))
-	weights := t.New(t.WithShape(3, 4), t.WithBacking(rawWeights))
-	biase := t.New(t.WithBacking([]float32{2.0}))
-
-	dotproduct, _ := t.Dot(weights, inputs)
-	output, _ := t.Add(dotproduct, biase)
-	fmt.Println(output)
-
+	// \sum_i (obs_i-exp_i)^2 / exp_i
+	// The lengths of obs and exp must be equal.
+	chiSquare := stat.ChiSquare(observed, expected)
+	fmt.Println("Chisquare:", chiSquare)
 }
